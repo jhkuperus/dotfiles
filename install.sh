@@ -13,7 +13,6 @@ HOME=$(cd && pwd)
 
 ## $1 = FILE
 ## $2 = LOCATION (default: '', if defined, file will be loaded from path and linked to same path in $HOME, prepended with a '.')
-## $3 = IN (optional, if defined it will cause a $HOME/.$TO path to be created, in which files from $PWD/$IN will be linked)
 function installFor() {
   if [[ -z "$1" ]]; then
     echo "Cannot invoke installFor without arguments"
