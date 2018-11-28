@@ -2,6 +2,7 @@
 
 function installAllDotFiles() {
   echo "Here goes..."
+  installFor "karabiner.json" "config/karabiner"
   # installFor "git"
   # scriptFor "wtvr"
 }
@@ -10,30 +11,33 @@ function installAllDotFiles() {
 PWD=$(pwd)
 HOME=$(cd && pwd)
 
-## $1 = FROM
-## $2 = TO (default: $FROM)
-## $3 = IN ( ? )
+## $1 = FILE
+## $2 = LOCATION (default: '', if defined, file will be loaded from path and linked to same path in $HOME, prepended with a '.')
+## $3 = IN (optional, if defined it will cause a $HOME/.$TO path to be created, in which files from $PWD/$IN will be linked)
 function installFor() {
   if [[ -z "$1" ]]; then
     echo "Cannot invoke installFor without arguments"
     return
   fi
 
-  FROM=$1
+  FILE=$1
 
-  if [[ -n "$2" ]]; then
-    TO=$FROM
+  if [[ -z "$2" ]]; then
+    FROM=$PWD/.$FILE
+    TO=$HOME/.$FILE
   else
-    TO=$2
+    LOCATION=$2
+
+    FROM=$PWD/$LOCATION/$FILE
+    TO=$HOME/.$LOCATION/$FILE
+
+    mkdir -p $HOME/.$LOCATION
   fi
 
-  if [[ -n "$3" ]]; then
-    echo "What am I doing?"
-    mkdir -p ./"$3"
-  fi
-
-  if [[ -e $PWD/$FROM ]]; then
-    echo "Linking $FROM to $HOME/$TO..."
+  if [[ -e "$FROM" ]]; then
+    echo "Linking $FROM to $TO..."
+    rm $TO 2> /dev/null
+    ln -s $FROM $TO
   else
     echo "WARNING: Missing dotfile for $FROM"
   fi
