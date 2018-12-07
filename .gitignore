@@ -1,0 +1,7 @@
+.checkJenkinsBuildBeforePush
+*~
+.npmrc
+.jh/
+.DS_Store
+.idea
+bower_components
