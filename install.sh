@@ -3,6 +3,7 @@
 function installAllDotFiles() {
   echo "Here goes..."
   installFor "vimrc"
+  installFor "kramor_git_aliases"
   installFor "karabiner.json" "config/karabiner"
   # installFor "git"
   # scriptFor "wtvr"
