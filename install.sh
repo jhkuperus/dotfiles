@@ -2,6 +2,7 @@
 
 function installAllDotFiles() {
   echo "Here goes..."
+  installFor "vimrc"
   installFor "karabiner.json" "config/karabiner"
   # installFor "git"
   # scriptFor "wtvr"
