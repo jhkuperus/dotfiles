@@ -4,6 +4,7 @@ function installAllDotFiles() {
   echo "Here goes..."
   installFor "vimrc"
   installFor "gitignore"
+  installFor "gitconfig"
   installFor "kramor_git_aliases"
   installFor "karabiner.json" "config/karabiner"
   # installFor "git"
