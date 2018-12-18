@@ -9,6 +9,14 @@ function installAllDotFiles() {
   installFor "karabiner.json" "config/karabiner"
   # installFor "git"
   # scriptFor "wtvr"
+
+  installFor "app-management.lua" "hammerspoon"
+  installFor "caffeine.lua" "hammerspoon"
+  installFor "emoji.lua" "hammerspoon"
+  installFor "hyper.lua" "hammerspoon"
+  installFor "init.lua" "hammerspoon"
+  installFor "modal-tools.lua" "hammerspoon"
+  installFor "window-management.lua" "hammerspoon"
 }
 
 
