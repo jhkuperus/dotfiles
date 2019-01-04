@@ -2,6 +2,7 @@
 
 function installAllDotFiles() {
   echo "Here goes..."
+  scriptFor "vim"
   installFor "vimrc"
   installFor "gitignore"
   installFor "gitconfig"
