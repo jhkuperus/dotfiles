@@ -103,16 +103,16 @@ if [[ -o interactive ]]; then
     iterm2_decorate_prompt() {
       # This should be a raw PS1 without iTerm2's stuff. It could be changed during command
       # execution.
-      ITERM2_PRECMD_PS1="$PS1"
+      ITERM2_PRECMD_PROMPT="$PROMPT"
       ITERM2_SHOULD_DECORATE_PROMPT=""
 
       # Add our escape sequences just before the prompt is shown.
-      if [[ $PS1 == *"$(iterm2_prompt_mark)"* ]]
-      then
-        PS1="$PS1%{$(iterm2_prompt_end)%}"
-      else
-        PS1="%{$(iterm2_prompt_mark)%}$PS1%{$(iterm2_prompt_end)%}"
-      fi
+      #if [[ $PROMPT == *"$(iterm2_prompt_mark)"* ]]
+      #then
+        PROMPT="$PROMPT%{$(iterm2_prompt_end)%}"
+      #else
+      #  PROMPT="%{$(iterm2_prompt_mark)%}$PROMPT%{$(iterm2_prompt_end)%}"
+      #fi
     }
 
     iterm2_precmd() {
@@ -132,7 +132,7 @@ if [[ -o interactive ]]; then
     # This is not run if you press ^C while entering a command.
     iterm2_preexec() {
       # Set PS1 back to its raw value prior to executing the command.
-      PS1="$ITERM2_PRECMD_PS1"
+      PROMPT="$ITERM2_PRECMD_PROMPT"
       ITERM2_SHOULD_DECORATE_PROMPT="1"
       iterm2_before_cmd_executes
     }
