@@ -2,6 +2,7 @@
 
 function installAllDotFiles() {
   echo "Here goes..."
+  installFor "iterm2-shell-integration.zsh"
   scriptFor "vim"
   installFor "vimrc"
   installFor "gitignore"
