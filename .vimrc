@@ -1,3 +1,5 @@
+:set encoding=utf-8
+
 " Initialize Pathogen
 execute pathogen#infect()
 
@@ -11,4 +13,5 @@ filetype plugin indent on
 :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
+
 
