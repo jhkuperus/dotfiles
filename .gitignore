@@ -1,7 +1,2 @@
-.checkJenkinsBuildBeforePush
+*.swp
 *~
-.npmrc
-.jh/
-.DS_Store
-.idea
-bower_components
