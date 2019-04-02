@@ -5,6 +5,7 @@ local This = {}
 -- Global Variable for Emoji Mode
 This.emojiMode = hs.hotkey.modal.new({}, 'F16')
 
+--local screenRect = hs.screen.mainScreen():frame()
 local screenRect = hs.screen.primaryScreen():frame()
 local keyGutter = 15
 local kbdWidth = screenRect.w - (200 + 20)
@@ -99,6 +100,9 @@ function iffy(cond, a, b)
 end
 
 function This.initKbd()
+        local canvasCoords = hs.screen.mainScreen():localToAbsolute({ x = 110, y = math.floor((screenRect.h - kbdHeight) / 2), h = kbdHeight, w = kbdWidth })
+        print(canvasCoords)
+   --This.onScreenKbd = hs.canvas.new{ hs.screen.mainScreen():localToAbsolute({ x = 110, y = math.floor((screenRect.h - kbdHeight) / 2), h = kbdHeight, w = kbdWidth })}
    This.onScreenKbd = hs.canvas.new{ x = 110, y = math.floor((screenRect.h - kbdHeight) / 2), h = kbdHeight, w = kbdWidth }
    This.onScreenKbd:insertElement({
 	 type = "rectangle",
@@ -238,17 +242,17 @@ This:bindEmoji('§', '😀')
     :bindEmoji('\\', '😄')
     :bindEmoji('return', '😄')
     :bindEmoji('`', '✅')
-    :bindEmoji('z', '🧹')
+    :bindEmoji('z', '❗')
     :bindEmoji('x', '❓')
     :bindEmoji('c', '⏱')
     :bindEmoji('v', '❄')
     :bindEmoji('b', '⚡️')
-    :bindEmoji('n', '😄')
+    :bindEmoji('n', '🧹')
     :bindEmoji('m', '😄')
     :bindEmoji(',', '😄')
     :bindEmoji('.', '😄')
     :bindEmoji('/', '😄')
-    :bindEmoji('space', '😄')
+    :bindEmoji('space', '🚦')
     :bindEmoji('up', '⬆️')
     :bindEmoji('right', '➡️')
     :bindEmoji('down', '⬇️')
