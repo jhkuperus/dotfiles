@@ -56,6 +56,7 @@ hyper.bindKey(']', function() am.switchToAndFromApp("com.googlecode.iterm2") end
 hyper.bindKey('[', function() am.switchToAndFromApp("com.apple.ActivityMonitor") end)
 hyper.bindKey(';', function() am.switchToAndFromApp("com.google.Chrome") end)
 hyper.bindKey('\\', function() am.switchToAndFromApp("com.grupovrs.ramboxce") end)
+hyper.bindKey('l', function() am.switchToAndFromApp("com.jetbrains.intellij") end)
 hyper.bindKey('k', function() am.switchToAndFromApp("com.apple.keychainaccess") end)
 hyper.bindKey('\'', function() am.switchToAndFromApp("com.apple.Notes") end)
 hyper.bindKey('/', function() am.switchToAndFromApp("com.apple.iCal") end)
