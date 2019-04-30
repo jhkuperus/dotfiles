@@ -5,6 +5,7 @@ alias g2='git --no-pager log --pretty=format:"%h, - %an, %ar : %s%n" --graph -2 
 alias g3='git --no-pager log --pretty=format:"%h, - %an, %ar : %s%n" --graph -3 $*'
 alias g5='git --no-pager log --pretty=format:"%h, - %an, %ar : %s%n" --graph -5 $*'
 alias gbsup='git branch --set-upstream-to=origin/$(git_current_branch)'
+alias gcmr='git checkout master && git rebase --autostash'
 alias gcme='git commit -e $*'
 alias gdh='git diff HEAD'
 alias gds='gid diff --staged'
