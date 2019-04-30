@@ -2,7 +2,11 @@
 
 function installAllDotFiles() {
   echo "Here goes..."
-  installFor "iterm2-shell-integration.zsh"
+  installFor "git-functions.zsh" "zsh-features"
+  installFor "anybar-integration.zsh" "zsh-features"
+  installFor "iterm2-shell-integration.zsh" "zsh-features"
+  installFor "iterm2-custom-escape-codes.zsh" "zsh-features"
+  installFor "timewarrior-helpers.zsh" "zsh-features"
   scriptFor "vim"
   installFor "vimrc"
   installFor "gitignore"
