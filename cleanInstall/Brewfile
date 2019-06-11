@@ -6,6 +6,7 @@ tap "homebrew/core"
 tap "minio/stable"
 
 # Brews
+brew "npm"
 brew "python"
 brew "ansible"
 brew "bat"
