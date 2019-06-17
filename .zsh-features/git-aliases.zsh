@@ -19,6 +19,7 @@ alias gpruner="git fetch --prune && (gb -vv | grep -e '\[origin/.*: gone\]' | aw
 alias gprune="git fetch --prune && (gb -vv | grep -e '\[origin/.*: gone\]' | awk '{print \$1}' | xargs git branch -d)"
 alias gpt='git push --tags $*'
 alias gs='git show $*'
+alias gst='git status $*'
 alias gstu='git stash -u $*'
 alias gw='git add -A && git commit -qm "WIPE SAVEPOINT" && git reset HEAD~1 --hard'
 alias gu='git reset --soft HEAD^1'
