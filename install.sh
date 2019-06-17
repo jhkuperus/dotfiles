@@ -2,16 +2,12 @@
 
 function installAllDotFiles() {
   echo "Here goes..."
-  installFor "git-functions.zsh" "zsh-features"
-  installFor "anybar-integration.zsh" "zsh-features"
-  installFor "iterm2-shell-integration.zsh" "zsh-features"
-  installFor "iterm2-custom-escape-codes.zsh" "zsh-features"
-  installFor "timewarrior-helpers.zsh" "zsh-features"
+  installFor "zshrc"
+  installFor "zsh-features"
   scriptFor "vim"
   installFor "vimrc"
   installFor "gitignore"
   installFor "gitconfig"
-  installFor "kramor_git_aliases"
   installFor "karabiner.json" "config/karabiner"
   # installFor "git"
   # scriptFor "wtvr"
