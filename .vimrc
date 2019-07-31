@@ -52,3 +52,13 @@ silent! colorscheme reversal
 :set expandtab
 :set shiftwidth=2
 :set smarttab
+
+" *****************************************
+" ** Prevent stray SHIFT keys from blocking
+" ** my flow
+" *****************************************
+
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q
