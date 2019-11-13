@@ -30,12 +30,18 @@ end tell]])
    hs.timer.doAfter(2, function() hs.eventtap.leftClick(np) end)
 end
 
+local minimizeAllWindows = function()
+   for i,w in pairs(hs.window.allWindows()) do
+	     w:minimize()
+   end
+end
+
 local minimizeAllButFocussedWindow = function()
    local focusWindow = hs.window.focusedWindow()
 
    for i,w in pairs(hs.window.allWindows()) do
       if w ~= focusWindow then
-	 w:minimize()
+	        w:minimize()
       end
    end
 
@@ -97,6 +103,12 @@ hyper.bindShiftKey("t", function()
 		      local time = os.date("%Y%m%d")
 		      hs.alert.show(time)
 		      hs.pasteboard.setContents(time)
+end)
+
+hyper.bindCommandShiftKey("t", function()
+  local time = os.date("%Y-%m-%d")
+  hs.alert.show(time)
+  hs.pasteboard.setContents(time)
 end)
 
 
@@ -170,7 +182,29 @@ for n,s in pairs(soundBoard) do
 
 end
 
+local parseMinimizeRequest = function(data, addr)
+  addr = hs.socket.parseAddress(addr)
+  print(data)
 
+  if data == 'min' then
+    minimizeAllWindows()
+  end
+end
+
+local server = hs.socket.udp.server(10901, parseMinimizeRequest):receive()
+
+local alertRememberOnUnlock = function(eventType)
+
+  if eventType == hs.caffeinate.watcher.screensDidUnlock then
+    local f = io.open('/Users/kramor/.remember', 'r')
+    if f ~= nil then
+      local content = f:read('*all'):gsub("^%s*(.-)%s*$", "%1")
+      hs.alert.show('Remember: ' .. content)
+    end
+  end
+end
+
+hs.caffeinate.watcher.new(alertRememberOnUnlock):start()
 
 hs.alert.show('🔨🥄✅')
 		 
