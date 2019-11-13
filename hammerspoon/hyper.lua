@@ -20,6 +20,13 @@ function This.bindShiftKey(key, handler)
    end)
 end
 
+function This.bindCommandShiftKey(key, handler)
+  This.hyperMode:bind({'command', 'shift'}, key, function()
+    handler()
+    This.hyperMode.triggered = true
+  end)
+end
+
 function This.bindKeyWithModifiers(key, mods, handler)
    This.hyperMode:bind(mods, key, function()
 	 handler()
