@@ -67,6 +67,7 @@ hyper.bindKey('k', function() am.switchToAndFromApp("com.apple.keychainaccess") 
 hyper.bindKey('\'', function() am.switchToAndFromApp("com.apple.Notes") end)
 hyper.bindKey('/', function() am.switchToAndFromApp("com.apple.iCal") end)
 hyper.bindKey('.', function() am.switchToAndFromApp("com.apple.finder") end)
+hyper.bindKey(',', function() am.switchToAndFromApp("net.cozic.joplin-desktop") end)
 hyper.bindKey('`', function() print(pcall(minimizeAllButFocussedWindow)) end)
 hyper.bindKey('1', function() am.switchToAndFromApp("WhatsApp") end)
 hyper.bindKey('2', function() am.switchToAndFromApp("com.tinyspeck.slackmacgap") end)
@@ -75,7 +76,11 @@ hyper.bindKey('2', function() am.switchToAndFromApp("com.tinyspeck.slackmacgap")
 hyper.bindShiftKey('space', function() am.newTerminalWindow() end)
 
 -- Show the bundleID of the currently open window
-hyper.bindKey('b', function() hs.alert.show(hs.window.focusedWindow():application():bundleID()) end)
+hyper.bindKey('b', function() 
+    local bundleId = hs.window.focusedWindow():application():bundleID()
+    hs.alert.show(bundleId)
+    hs.pasteboard.setContents(bundleId)
+end)
 
 -- Window Management
 hyper.bindKey("up", function() wm.windowMaximize(0) end)
