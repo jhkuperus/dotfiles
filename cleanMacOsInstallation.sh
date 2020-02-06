@@ -16,6 +16,9 @@ done
 
 echo ""
 
+# Make sure XCode and tools have been installed
+xcode-select --install
+
 # Check if Homebrew is installed and install if it is missing
 if test ! $(which brew); then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -39,3 +42,5 @@ chsh -s $(which zsh)
 npm install --global @angular/cli npmrc phantomjs-prebuilt reveal-md typescript
 
 
+# Enable atrun daemon to use the `at` command
+launchctl load -w /System/Library/LaunchDaemons/com.apple.atrun.plist
