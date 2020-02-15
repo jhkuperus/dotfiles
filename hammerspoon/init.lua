@@ -71,6 +71,7 @@ hyper.bindKey(',', function() am.switchToAndFromApp("net.cozic.joplin-desktop") 
 hyper.bindKey('`', function() print(pcall(minimizeAllButFocussedWindow)) end)
 hyper.bindKey('1', function() am.switchToAndFromApp("WhatsApp") end)
 hyper.bindKey('2', function() am.switchToAndFromApp("com.tinyspeck.slackmacgap") end)
+hyper.bindShiftKey('\\', function() am.switchToAndFromApp("com.tinyspeck.slackmacgap") end)
 
 -- Create new Terminal Window
 hyper.bindShiftKey('space', function() am.newTerminalWindow() end)
