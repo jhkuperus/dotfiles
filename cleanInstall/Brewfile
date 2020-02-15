@@ -5,6 +5,9 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "minio/stable"
 
+cask "adoptopenjdk"
+mas "Xcode", id: 497799835
+
 # Brews
 brew "npm"
 brew "python"
@@ -64,7 +67,6 @@ cask "whatsapp"
 mas "Numbers", id: 409203825
 mas "Airmail 3", id: 918858936
 mas "Pages", id: 409201541
-mas "Xcode", id: 497799835
 mas "Keynote", id: 409183694
 mas "iA Writer", id: 775737590
 mas "NordVPN IKE", id: 1116599239
