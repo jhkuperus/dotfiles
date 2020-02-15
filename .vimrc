@@ -3,12 +3,16 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-surround'
-Plug 'derekwyatt/vim-scala'
 Plug 'RRethy/vim-hexokinase'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 
-Plug 'jqno/vim-reversal'
+Plug 'jqno/reversal.vim'
+
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+
+Plug 'natebosch/vim-lsc'
 
 call plug#end()
 
@@ -27,6 +31,18 @@ nmap \ <Plug>Commentary
 omap \ <Plug>Commentary
 nmap \\ <Plug>CommentaryLine
 nmap <leader>\ <Plug>Commentary<Plug>Commentary
+
+
+" *****************************************
+" ** Language Server(s) Config
+" *****************************************
+
+let g:lsc_server_commands = {
+  \ 'go' : {
+  \   'name': 'gopls',
+  \   'command': '/Users/kramor/Development/Projects/Politie/cockroach/bin/gopls',
+  \   },
+  \}
 
 
 " *****************************************
