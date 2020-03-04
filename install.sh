@@ -7,6 +7,7 @@ function installAllDotFiles() {
   installFor "iterm2-shell-integration.zsh" "zsh-features"
   installFor "iterm2-custom-escape-codes.zsh" "zsh-features"
   installFor "timewarrior-helpers.zsh" "zsh-features"
+  installFor "keybindings.zsh" "zsh-features"
   scriptFor "vim"
   installFor "vimrc"
   installFor "gitignore"
