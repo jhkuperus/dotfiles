@@ -27,8 +27,6 @@ function select_branch() {
 
       if [[ $newPackageJsonHash != $currentPackageJsonHash ]];
       then
-        local SELECTION
-
         echo "The package.json has changed between branches, running npm i in 2 seconds unless you cancel it now..."
         sleep 2
 
