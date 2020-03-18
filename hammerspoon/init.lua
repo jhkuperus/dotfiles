@@ -61,7 +61,7 @@ hyper.bindShiftKey('p', function() hs.spotify.displayCurrentTrack() end)
 hyper.bindKey(']', function() am.switchToAndFromApp("com.googlecode.iterm2") end)
 hyper.bindKey('[', function() am.switchToAndFromApp("com.apple.ActivityMonitor") end)
 hyper.bindKey(';', function() am.switchToAndFromApp("com.google.Chrome") end)
-hyper.bindKey('\\', function() am.switchToAndFromApp("chat.rocket") end)
+hyper.bindShiftKey('\\', function() am.switchToAndFromApp("chat.rocket") end)
 hyper.bindKey('l', function() am.switchToAndFromApp("com.jetbrains.intellij") end)
 hyper.bindKey('k', function() am.switchToAndFromApp("com.apple.keychainaccess") end)
 hyper.bindKey('\'', function() am.switchToAndFromApp("com.apple.Notes") end)
@@ -71,7 +71,7 @@ hyper.bindKey(',', function() am.switchToAndFromApp("net.cozic.joplin-desktop") 
 hyper.bindKey('`', function() print(pcall(minimizeAllButFocussedWindow)) end)
 hyper.bindKey('1', function() am.switchToAndFromApp("WhatsApp") end)
 hyper.bindKey('2', function() am.switchToAndFromApp("com.tinyspeck.slackmacgap") end)
-hyper.bindShiftKey('\\', function() am.switchToAndFromApp("com.tinyspeck.slackmacgap") end)
+hyper.bindKey('\\', function() am.switchToAndFromApp("com.tinyspeck.slackmacgap") end)
 
 -- Create new Terminal Window
 hyper.bindShiftKey('space', function() am.newTerminalWindow() end)
@@ -92,8 +92,8 @@ hyper.bindKey("left", function() wm.windowMoveLeft() end)
 
 hyper.bindShiftKey("1", function() wm.windowMoveTopLeft() end)
 hyper.bindShiftKey("2", function() wm.windowMoveTopRight() end)
-hyper.bindShiftKey("3", function() wm.windowMoveBottomRight() end)
-hyper.bindShiftKey("4", function() wm.windowMoveBottomLeft() end)
+hyper.bindShiftKey("3", function() wm.windowMoveBottomLeft() end)
+hyper.bindShiftKey("4", function() wm.windowMoveBottomRight() end)
 hyper.bindShiftKey("5", function() wm.windowMoveUp() end)
 hyper.bindShiftKey("6", function() wm.windowMoveDown() end)
 hyper.bindShiftKey("7", function() print(pcall(function() wm.windowMoveToCenter(hs.window.focusedWindow()) end)) end)
@@ -165,6 +165,7 @@ christmas1 =      { key = 'c', file = 'christmas_driving.m4a' },
 --homeEvilLaugh =   { key = 'c', file = 'homer-simpson-evil-laugh-from-youtube.mp3' },
 mariachi =        { key = 'v', file = 'mariachi_1.mp3' },
 cantTouchThis =   { key = 'b', file = 'mc-hammer-u-cant-touch-this.mp3' },
+nope =            { key = 'n', file = 'nope.mp3' },
 
 hallelujah =      { key = '/', file = 'holygrenade.mp3' }
    
