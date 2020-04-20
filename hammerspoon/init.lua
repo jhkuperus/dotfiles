@@ -85,18 +85,17 @@ end)
 
 -- Window Management
 hyper.bindKey("up", function() wm.windowMaximize(0) end)
-hyper.bindKey("right", function() wm.windowMoveRight() end)
-hyper.bindKey("down", function() wm.fw():moveOneScreenEast() end)
-hyper.bindShiftKey("down", function() wm.fw():moveOneScreenWest() end)
-hyper.bindKey("left", function() wm.windowMoveLeft() end)
+hyper.bindKey("right", function() wm.moveWindowToPosition(wm.screenPositions.right) end)
+hyper.bindKey("down", function() hs.window.focusedWindow():moveOneScreenEast() end)
+hyper.bindShiftKey("down", function() hs.window.focusedWindow():moveOneScreenWest() end)
+hyper.bindKey("left", function() wm.moveWindowToPosition(wm.screenPositions.left) end)
 
-hyper.bindShiftKey("1", function() wm.windowMoveTopLeft() end)
-hyper.bindShiftKey("2", function() wm.windowMoveTopRight() end)
-hyper.bindShiftKey("3", function() wm.windowMoveBottomLeft() end)
-hyper.bindShiftKey("4", function() wm.windowMoveBottomRight() end)
-hyper.bindShiftKey("5", function() wm.windowMoveUp() end)
-hyper.bindShiftKey("6", function() wm.windowMoveDown() end)
-hyper.bindShiftKey("7", function() print(pcall(function() wm.windowMoveToCenter(hs.window.focusedWindow()) end)) end)
+hyper.bindShiftKey("1", function() wm.moveWindowToPosition(wm.screenPositions.topLeft) end)
+hyper.bindShiftKey("2", function() wm.moveWindowToPosition(wm.screenPositions.topRight) end)
+hyper.bindShiftKey("3", function() wm.moveWindowToPosition(wm.screenPositions.bottomLeft) end)
+hyper.bindShiftKey("4", function() wm.moveWindowToPosition(wm.screenPositions.bottomRight) end)
+hyper.bindShiftKey("5", function() wm.moveWindowToPosition(wm.screenPositions.top) end)
+hyper.bindShiftKey("6", function() wm.moveWindowToPosition(wm.screenPositions.bottom) end)
 
 -- Handy Dandyness
 hyper.bindKey("t", function()
