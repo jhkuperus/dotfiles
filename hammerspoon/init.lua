@@ -52,7 +52,7 @@ end
 hyper.bindKey('r', hs.reload)
 
 -- Global Application Keyboard Shortcuts
-hyper.bindKey('m', function() am.switchToAndFromApp("it.bloop.airmail2") end)
+hyper.bindKey('m', function() am.switchToAndFromApp("com.postbox-inc.postbox") end)
 hyper.bindShiftKey('m', function()
 		      print(pcall(composeAirmail))
 end)
