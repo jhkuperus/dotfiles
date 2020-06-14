@@ -97,17 +97,17 @@ hyper.bindShiftKey("4", function() wm.moveWindowToPosition(wm.screenPositions.bo
 hyper.bindShiftKey("5", function() wm.moveWindowToPosition(wm.screenPositions.top) end)
 hyper.bindShiftKey("6", function() wm.moveWindowToPosition(wm.screenPositions.bottom) end)
 
--- Handy Dandyness
+-- Date Handy Dandyness
 hyper.bindKey("t", function()
-		 local time = os.date("%A, %d %B %Y, %H:%M")
-		 hs.alert.show(time)
-		 hs.pasteboard.setContents(time)
+  local time = os.date("%A, %d %B %Y, %H:%M")
+  hs.alert.show(time)
+  hs.pasteboard.setContents(time)
 end)
 
 hyper.bindShiftKey("t", function()
-		      local time = os.date("%Y%m%d")
-		      hs.alert.show(time)
-		      hs.pasteboard.setContents(time)
+  local time = os.date("%Y%m%d")
+  hs.alert.show(time)
+  hs.pasteboard.setContents(time)
 end)
 
 hyper.bindCommandShiftKey("t", function()
@@ -118,74 +118,66 @@ end)
 
 
 local soundBoard = {
-badumtiss =       { key = '1', file = 'joke_drum_effect.mp3' },
-metalgearsolid =  { key = '2', file = 'metalgearsolid.swf.mp3' },
-winError =        { key = '3', file = 'erro.mp3' },
-sadtrombone =     { key = '4', file = 'sadtrombone.swf.mp3' },
-crickets =        { key = '5', file = 'crickets-chirping.mp3' },
-batman =          { key = '6', file = 'batman-transition-download-sound-link.mp3' },
-shocked =         { key = '7', file = 'shocked.mp3' },
-inception =       { key = '8', file = 'inceptionbutton.mp3' },
-haGay =           { key = '9', file = 'ha-gay.mp3' },
-workwork =        { key = '0', file = 'wc3-peon-says-work-work-only-.mp3' },
-workComplete =    { key = '-', file = 'warcraft-ii-sound-effects-orc-peon-grunt_-_work-complete.mp3' },
-ns =              { key = '=', file = 'ns-ding-dong.mp3' },
-
-airhorn =         { key = 'q', file = 'air-horn-club-sample_1.mp3' },
-nooo =            { key = 'w', file = 'nooo.swf.mp3' },
-victoryff =       { key = 'e', file = 'victoryff.swf.mp3' },
-laughterShort =   { key = 'r', file = 'laughter-short.mp3' },
-kidsCheering =    { key = 't', file = 'kids_cheering.mp3' },
-retardAlert =     { key = 'y', file = 'retard-alert.mp3' },
-zoidberg =        { key = 'u', file = 'zoidberg.mp3' },
-thunderbirds =    { key = 'i', file = 'thunderbirds-countdown.mp3' },
-mk =              { key = 'o', file = 'mk.mp3' },
-over9000 =        { key = 'p', file = 'over9000.swf.mp3' },
-sound9 =          { key = '[', file = 'sound-9.mp3' },
-it =              { key = ']', file = 'it.mp3' },
-
-sheep =           { key = 'a', file = '01-the-screaming-sheep.mp3' },
-woohoo =          { key = 's', file = 'homersimpsonwoohoow-1.mp3', volume = 1.0 },
-doh =             { key = 'd', file = 'homer-d-oh.mp3' },
-homeEvilLaugh =   { key = 'f', file = 'homer-simpson-evil-laugh-from-youtube.mp3' },
-haha =            { key = 'g', file = 'the-simpsons-nelsons-haha.mp3' },
-psbAlarm =        { key = 'h', file = 'psb-alarm.mp3', volume = 0.4 },
-kaChing =         { key = 'j', file = 'ka-ching.mp3' },
-woodyWoodpecker = { key = 'k', file = 'woody-woodpecker-laugh.mp3' },
-woopWoop =        { key = 'l', file = 'sound-of-da-police-krs-one.mp3' },
-wtfBoom =         { key = ';', file = 'wtf_boom.mp3' },
-dropTheBass =     { key = '\'', file = 'd-d-d-d-drop-the-bass.mp3' },
-leroy =           { key = '\\', file = 'leroy.swf.mp3' },
-
-elevator =        { key = '`', file = 'musique-dascenseur-mp3cut.mp3' },
-cupASoup =        { key = 'z', file = 'cup-a-soup-reclame-sjors-ruben-van-der-meer-mp3cut.mp3' },
-looneyTunes =     { key = 'x', file = 'looney-tunes.mp3' },
-christmas1 =      { key = 'c', file = 'christmas_driving.m4a' },
---homeEvilLaugh =   { key = 'c', file = 'homer-simpson-evil-laugh-from-youtube.mp3' },
-mariachi =        { key = 'v', file = 'mariachi_1.mp3' },
-cantTouchThis =   { key = 'b', file = 'mc-hammer-u-cant-touch-this.mp3' },
-nope =            { key = 'n', file = 'nope.mp3' },
-
-hallelujah =      { key = '/', file = 'holygrenade.mp3' }
-   
+  badumtiss =       { key = '1', file = 'joke_drum_effect.mp3' },
+  metalgearsolid =  { key = '2', file = 'metalgearsolid.swf.mp3' },
+  winError =        { key = '3', file = 'erro.mp3' },
+  sadtrombone =     { key = '4', file = 'sadtrombone.swf.mp3' },
+  crickets =        { key = '5', file = 'crickets-chirping.mp3' },
+  batman =          { key = '6', file = 'batman-transition-download-sound-link.mp3' },
+  shocked =         { key = '7', file = 'shocked.mp3' },
+  inception =       { key = '8', file = 'inceptionbutton.mp3' },
+  haGay =           { key = '9', file = 'ha-gay.mp3' },
+  workwork =        { key = '0', file = 'wc3-peon-says-work-work-only-.mp3' },
+  workComplete =    { key = '-', file = 'warcraft-ii-sound-effects-orc-peon-grunt_-_work-complete.mp3' },
+  ns =              { key = '=', file = 'ns-ding-dong.mp3' },
+  
+  airhorn =         { key = 'q', file = 'air-horn-club-sample_1.mp3' },
+  nooo =            { key = 'w', file = 'nooo.swf.mp3' },
+  victoryff =       { key = 'e', file = 'victoryff.swf.mp3' },
+  laughterShort =   { key = 'r', file = 'laughter-short.mp3' },
+  kidsCheering =    { key = 't', file = 'kids_cheering.mp3' },
+  retardAlert =     { key = 'y', file = 'retard-alert.mp3' },
+  zoidberg =        { key = 'u', file = 'zoidberg.mp3' },
+  thunderbirds =    { key = 'i', file = 'thunderbirds-countdown.mp3' },
+  mk =              { key = 'o', file = 'mk.mp3' },
+  over9000 =        { key = 'p', file = 'over9000.swf.mp3' },
+  sound9 =          { key = '[', file = 'sound-9.mp3' },
+  it =              { key = ']', file = 'it.mp3' },
+  
+  sheep =           { key = 'a', file = '01-the-screaming-sheep.mp3' },
+  woohoo =          { key = 's', file = 'homersimpsonwoohoow-1.mp3', volume = 1.0 },
+  doh =             { key = 'd', file = 'homer-d-oh.mp3' },
+  homeEvilLaugh =   { key = 'f', file = 'homer-simpson-evil-laugh-from-youtube.mp3' },
+  haha =            { key = 'g', file = 'the-simpsons-nelsons-haha.mp3' },
+  psbAlarm =        { key = 'h', file = 'psb-alarm.mp3', volume = 0.4 },
+  kaChing =         { key = 'j', file = 'ka-ching.mp3' },
+  woodyWoodpecker = { key = 'k', file = 'woody-woodpecker-laugh.mp3' },
+  woopWoop =        { key = 'l', file = 'sound-of-da-police-krs-one.mp3' },
+  wtfBoom =         { key = ';', file = 'wtf_boom.mp3' },
+  dropTheBass =     { key = '\'', file = 'd-d-d-d-drop-the-bass.mp3' },
+  leroy =           { key = '\\', file = 'leroy.swf.mp3' },
+  
+  elevator =        { key = '`', file = 'musique-dascenseur-mp3cut.mp3' },
+  cupASoup =        { key = 'z', file = 'cup-a-soup-reclame-sjors-ruben-van-der-meer-mp3cut.mp3' },
+  looneyTunes =     { key = 'x', file = 'looney-tunes.mp3' },
+  christmas1 =      { key = 'c', file = 'christmas_driving.m4a' },
+  --homeEvilLaugh =   { key = 'c', file = 'homer-simpson-evil-laugh-from-youtube.mp3' },
+  mariachi =        { key = 'v', file = 'mariachi_1.mp3' },
+  cantTouchThis =   { key = 'b', file = 'mc-hammer-u-cant-touch-this.mp3' },
+  nope =            { key = 'n', file = 'nope.mp3' },
+  
+  hallelujah =      { key = '/', file = 'holygrenade.mp3' }
+     
 }
 
--- Soundboard!
+-- Initialise Soundboard!
 for n,s in pairs(soundBoard) do
-   print(pcall(function()
-	       s.sound = hs.sound.getByFile(os.getenv("HOME") .. '/.hammerspoon-assets/soundboard/' .. s.file)
+  s.sound = hs.sound.getByFile(os.getenv("HOME") .. '/.hammerspoon-assets/soundboard/' .. s.file)
 
-	       if s.volume then
-		  s.sound:volume(s.volume)
-	       end
-   end))
-   
-   print(pcall(function() hyper.bindKeyWithModifiers(s.key, {'cmd'}, function()
-				 s.sound:stop()
-				 s.sound:play()
-						    end)
-   end))
-
+  hyper.bindKeyWithModifiers(s.key, {'cmd'}, function()
+    s.sound:stop()
+    s.sound:play()
+  end)
 end
 
 local parseMinimizeRequest = function(data, addr)
