@@ -3,33 +3,40 @@ tap "ethereum/ethereum"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
+tap "lampepfl/brew"
 tap "minio/stable"
+tap "rockymadden/rockymadden"
 
 cask "adoptopenjdk"
 mas "Xcode", id: 497799835
 
 # Brews
-brew "npm"
-brew "python"
 brew "ansible"
 brew "bat"
+brew "npm"
 brew "emacs"
 brew "fzf"
 brew "ghostscript"
 brew "git"
 brew "graphviz"
+brew "python"
 brew "imagemagick"
 brew "jq"
 brew "librsvg"
 brew "mas"
 brew "maven"
+brew "minikube"
+brew "minio-mc"
 brew "sbt"
 brew "telnet"
 brew "terraform"
+brew "tig"
+brew "tree"
 brew "ufraw"
 brew "vim"
 brew "ethereum/ethereum/ethereum"
-brew "minio/stable/mc"
+brew "lampepfl/brew/dotty"
+brew "rockymadden/rockymadden/slack-cli"
 
 # Casks
 cask "avast-security"
@@ -42,12 +49,12 @@ cask "firefox"
 cask "fritzing"
 cask "google-chrome"
 cask "iterm2"
+cask "joplin"
 cask "karabiner-elements"
 cask "kindle"
 cask "lulu"
 cask "macpass"
-cask "mongodb-compass"
-cask "mplayerx"
+cask "ngrok"
 cask "onyx"
 cask "openttd"
 cask "oversight"
@@ -68,6 +75,5 @@ mas "Numbers", id: 409203825
 mas "Airmail 3", id: 918858936
 mas "Pages", id: 409201541
 mas "Keynote", id: 409183694
-mas "iA Writer", id: 775737590
 mas "NordVPN IKE", id: 1116599239
 mas "MS Remote Desktop", id: 715768417
