@@ -48,6 +48,17 @@ local minimizeAllButFocussedWindow = function()
    hs.alert.show('📽')
 end
 
+local appLog = hs.logger.new('blarp','info')
+
+-- Automatically start OBS' Virtual Camera when it launches
+local obsWatcher = hs.application.watcher.new(function(app, event, application)
+    if app == "OBS" and event == hs.application.watcher.launched then
+      application:selectMenuItem("Start Virtual Camera")
+    end
+  end)
+
+  obsWatcher:start()
+  
 -- Quick Reloading of Hammerspoon
 hyper.bindKey('r', hs.reload)
 
@@ -56,6 +67,8 @@ hyper.bindKey('m', function() am.switchToAndFromApp("com.postbox-inc.postbox") e
 hyper.bindShiftKey('m', function()
 		      print(pcall(composeAirmail))
 end)
+
+hyper.bindKey('o', function() am.switchToAndFromApp("com.obsproject.obs-studio") end)
 hyper.bindKey('p', function() am.switchToAndFromApp("com.spotify.client") end)
 hyper.bindShiftKey('p', function() hs.spotify.displayCurrentTrack() end)
 hyper.bindKey(']', function() am.switchToAndFromApp("com.googlecode.iterm2") end)
