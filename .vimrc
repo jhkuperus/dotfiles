@@ -69,6 +69,9 @@ silent! colorscheme reversal
 :set shiftwidth=2
 :set smarttab
 
+" Backspace over indents, eols, line-starts: just like normal editors
+set backspace=indent,eol,start
+
 " *****************************************
 " ** Prevent stray SHIFT keys from blocking
 " ** my flow
