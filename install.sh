@@ -19,6 +19,7 @@ function installAllDotFiles() {
 
   installFor "app-management.lua" "hammerspoon"
   installFor "caffeine.lua" "hammerspoon"
+  installFor "double-shift.lua" "hammerspoon"
   installFor "emoji.lua" "hammerspoon"
   installFor "hyper.lua" "hammerspoon"
   installFor "init.lua" "hammerspoon"

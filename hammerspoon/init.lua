@@ -8,6 +8,8 @@ local hyper = require('hyper')
 local emoji = require('emoji')
 local caf = require('caffeine')
 
+local doubleTap = require('double-shift')
+
 hyper.install('F18')
 caf.install()
 hyper.bindKey('e', function()
@@ -128,7 +130,6 @@ hyper.bindCommandShiftKey("t", function()
   hs.alert.show(time)
   hs.pasteboard.setContents(time)
 end)
-
 
 local soundBoard = {
   badumtiss =       { key = '1', file = 'joke_drum_effect.mp3' },
