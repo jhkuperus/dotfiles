@@ -25,6 +25,8 @@ function installAllDotFiles() {
   installFor "init.lua" "hammerspoon"
   installFor "modal-tools.lua" "hammerspoon"
   installFor "window-management.lua" "hammerspoon"
+
+  installFor "gpg-agent.conf" "gnupg"
 }
 
 
