@@ -14,6 +14,8 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'natebosch/vim-lsc'
 
+Plug 'machakann/vim-sandwich'
+
 call plug#end()
 
 
@@ -68,6 +70,8 @@ silent! colorscheme reversal
 :set expandtab
 :set shiftwidth=2
 :set smarttab
+
+:set splitright
 
 " Backspace over indents, eols, line-starts: just like normal editors
 set backspace=indent,eol,start
