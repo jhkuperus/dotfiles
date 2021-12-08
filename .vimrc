@@ -1,4 +1,5 @@
 :set encoding=utf-8
+let mapleader = " "
 
 call plug#begin('~/.vim/plugged')
 
@@ -85,3 +86,7 @@ set backspace=indent,eol,start
 :command Wq wq
 :command W w
 :command Q q
+
+" Toggles to reading mode where cursor is kept mid-screen when scrolling
+nnoremap <silent> <leader>ts :exec 'set scrolloff=' . (104-&scrolloff)<CR>
+
