@@ -1,30 +1,50 @@
 #!/usr/bin/env bash
 
+UNAME_OUTPUT=$(uname -s)
+case "$UNAME_OUTPUT" in
+  Linux*)   OS=LINUX;;
+  Darwin*)  OS=DARWIN;;
+  *)        OS=UNSUPPORTED;;
+esac
+
+if [[ $OS == "UNSUPPORTED" ]];
+then
+  echo "Sorry, this OS is not supported at this time: $OS"
+  exit 1
+fi
+
+echo "Detected Operating System: $OS"
+
 function installAllDotFiles() {
   echo "Here goes..."
+  installFor "personal.zsh-theme" "zsh-features"
+  installFor "aliases" "zsh-features"
   installFor "git-functions.zsh" "zsh-features"
-  installFor "anybar-integration.zsh" "zsh-features"
-  installFor "iterm2-shell-integration.zsh" "zsh-features"
-  installFor "iterm2-custom-escape-codes.zsh" "zsh-features"
   installFor "timewarrior-helpers.zsh" "zsh-features"
   installFor "keybindings.zsh" "zsh-features"
   scriptFor "vim"
   installFor "vimrc"
   installFor "gitignore"
   installFor "gitconfig"
-  installFor "kramor_git_aliases"
-  installFor "karabiner.json" "config/karabiner"
-  # installFor "git"
-  # scriptFor "wtvr"
 
-  installFor "app-management.lua" "hammerspoon"
-  installFor "caffeine.lua" "hammerspoon"
-  installFor "double-shift.lua" "hammerspoon"
-  installFor "emoji.lua" "hammerspoon"
-  installFor "hyper.lua" "hammerspoon"
-  installFor "init.lua" "hammerspoon"
-  installFor "modal-tools.lua" "hammerspoon"
-  installFor "window-management.lua" "hammerspoon"
+  if [[ $OS == "DARWIN" ]];
+  then
+    installFor "iterm2-shell-integration.zsh" "zsh-features"
+    installFor "iterm2-custom-escape-codes.zsh" "zsh-features"
+
+    installFor "anybar-integration.zsh" "zsh-features"
+
+    installFor "karabiner.json" "config/karabiner"
+
+    installFor "app-management.lua" "hammerspoon"
+    installFor "caffeine.lua" "hammerspoon"
+    installFor "double-shift.lua" "hammerspoon"
+    installFor "emoji.lua" "hammerspoon"
+    installFor "hyper.lua" "hammerspoon"
+    installFor "init.lua" "hammerspoon"
+    installFor "modal-tools.lua" "hammerspoon"
+    installFor "window-management.lua" "hammerspoon"
+  fi
 
   installFor "gpg-agent.conf" "gnupg"
 }
