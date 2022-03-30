@@ -3,8 +3,23 @@
 	email = jhkuperus@yoink.nl
 [core]
 	excludesfile = /Users/kramor/.gitignore
+  pager = delta
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true
+
+[merge]
+  conflictstyle = diff3
+
+[diff]
+  colorMoved = default
 
 [pager]
 	branch = false
 [pull]
 	rebase = false
+[init]
+	defaultBranch = main
