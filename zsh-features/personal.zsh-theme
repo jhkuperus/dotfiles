@@ -153,7 +153,7 @@ function build_prompt() {
 
   P+="$(is_git_dirty $RED $SEPCOLOR)$RAW_SEP"
 
-  P+="%{$reset_color%} "
+  P+="%b%F{white} "
 
   echo $P
 }
