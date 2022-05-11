@@ -1,6 +1,6 @@
 if [[ $OS == "DARWIN" ]];
 then
-  alias wifi='networksetup -setairportpower airport $*'
+  alias wifi='networksetup -setairportpower airport'
 
   alias pwdc='pwd|pbcopy'
 
