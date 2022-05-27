@@ -17,7 +17,7 @@ echo "Detected Operating System: $OS"
 
 function installAllDotFiles() {
   echo "Here goes..."
-  installFor "personal.zsh-theme" "zsh-features"
+#  installFor "personal.zsh-theme" "zsh-features"
   installFor "aliases" "zsh-features"
   installFor "git-functions.zsh" "zsh-features"
   installFor "timewarrior-helpers.zsh" "zsh-features"
@@ -26,6 +26,7 @@ function installAllDotFiles() {
   installFor "vimrc"
   installFor "gitignore"
   installFor "gitconfig"
+  installFor "fish" "config"
 
   if [[ $OS == "DARWIN" ]];
   then
