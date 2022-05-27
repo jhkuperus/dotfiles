@@ -1,0 +1,43 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts blank line between prompts
+add_newline = true
+
+format = """
+[\ue0b6](fg:#143A46 bg:black)[$username](bg:#143A46 fg:white)\
+[\ue0b4](fg:#143A46 bg:#14566b)$directory\
+[\ue0b4](fg:#14566b bg:#1b7f6b)$git_branch$git_state\
+[\ue0b4](fg:#1b7f6b bg:#1ca967)$git_metrics\
+[\ue0b4](fg:#1ca967 bg:#1ca9af)$git_status\
+[\ue0b4](fg:#1ca9af bg:black)
+[>](green bold) 
+"""
+
+[username]
+style_user = 'bg:#143A46 fg:white'
+style_root = 'bg:#143A46 fg:red bold'
+format = "[$user]($style)"
+show_always = true
+
+[directory]
+style = 'bg:#14566b fg:white bold'
+format = '[ $path]($style)[$read_only]($read_only_style)'
+
+[git_branch]
+format = '[ $symbol$branch(:$remote_branch)]($style)'
+symbol = "\ue725 "
+style = 'bg:#1b7f6b fg:white'
+
+[git_state]
+style = 'bg:#1b7f6b fg:#8e082f'
+format = '[ \($state ($progress_current/$progress_total)\)]($style)'
+
+[git_metrics]
+added_style = 'bg:#1caf55 fg:white'
+deleted_style = 'bg:#1caf55 fg:white'
+format = '[ (+$added) ]($added_style)[(-$deleted)]($deleted_style)'
+disabled = false
+
+[git_status]
+style = 'bg:#1ca9af fg:white bold'
+format = '([ \[$all_status$ahead_behind\]]($style))'

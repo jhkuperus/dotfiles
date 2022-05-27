@@ -27,6 +27,7 @@ function installAllDotFiles() {
   installFor "gitignore"
   installFor "gitconfig"
   installFor "fish" "config"
+  installFor "starship.toml" "config"
 
   if [[ $OS == "DARWIN" ]];
   then
