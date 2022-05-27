@@ -21,6 +21,7 @@ show_always = true
 
 [directory]
 style = 'bg:#14566b fg:white bold'
+read_only_style = 'bg:#14566b fg:white bold'
 format = '[ $path]($style)[$read_only]($read_only_style)'
 
 [git_branch]
