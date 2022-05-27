@@ -1,5 +1,6 @@
-if [[ $OS == "DARWIN" ]];
-then
+set OS $(uname)
+
+if test $OS = "DARWIN"
   alias wifi='networksetup -setairportpower airport'
 
   alias pwdc='pwd|pbcopy'
@@ -13,4 +14,4 @@ then
   alias java16='unset JAVA_HOME; export JAVA_HOME=`/usr/libexec/java_home -v 16`'
   alias java16='unset JAVA_HOME; export JAVA_HOME=`/usr/libexec/java_home -v 17`'
 
-fi
+end
