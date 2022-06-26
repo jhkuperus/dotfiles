@@ -4,14 +4,21 @@
 add_newline = true
 
 format = """
-[\ue0b6](fg:#143A46 bg:black)[$username](bg:#143A46 fg:white)\
+[\ue0b6](fg:#14566b)[ $env_var ](bg:#14566b)\
+[\ue0b6](fg:#143A46 bg:#14566b)[$username](bg:#143A46 fg:white)\
 [\ue0b4](fg:#143A46 bg:#14566b)$directory\
 [\ue0b4](fg:#14566b bg:#1b7f6b)$git_branch$git_state\
 [\ue0b4](fg:#1b7f6b bg:#1ca967)$git_metrics\
 [\ue0b4](fg:#1ca967 bg:#1ca9af)$git_status\
 [\ue0b4](fg:#1ca9af bg:black)
-[>](green bold) 
+$character
 """
+
+[env_var.session]
+variable = "SESSION_TYPE"
+default = "❓"
+style = 'bg:#14566b fg:white'
+format = "[$env_value]($style)"
 
 [username]
 style_user = 'bg:#143A46 fg:white'
