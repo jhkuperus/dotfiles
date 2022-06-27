@@ -18,10 +18,13 @@ echo ""
 
 # Make sure XCode and tools have been installed
 xcode-select --install
+sudo xcodebuild -license accept
 
 # Check if Homebrew is installed and install if it is missing
 if test ! $(which brew); then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 # Update Homebrew
@@ -34,13 +37,41 @@ brew update
 brew tap homebrew/bundle
 brew bundle install --no-upgrade --file=$PWD/cleanInstall/Brewfile
 
-# Make ZSH the default shell environment
-chsh -s $(which zsh)
+# Make Fish the default shell environment
+FISH_SHELL=$(which fish)
+if grep "$FISH_SHELL" /etc/shells > /dev/null;
+then
+  echo "Fish is available as shell"
+else
+  echo "Fish is not available as shell, correcting"
+  sudo sh -c "echo '$FISH_SHELL' >> /etc/shells"
+fi
+
+chsh -s $(which fish)
 
 # Install global NPM packages
 # Use this command to check for globally installed packages: npm list -g --depth 0
-npm install --global @angular/cli npmrc phantomjs-prebuilt reveal-md typescript
+npm install --global @angular/cli npmrc reveal-md typescript
 
 
 # Enable atrun daemon to use the `at` command
 launchctl load -w /System/Library/LaunchDaemons/com.apple.atrun.plist
+
+# Install Fira Nerd Fonts
+echo "Installing Fira Nerd Fonts"
+cp $PWD/cleanInstall/fonts/* /Library/Fonts
+
+
+# Installing SDKMAN!
+curl -s "https://get.sdkman.io" | bash
+
+
+
+# Final manual steps
+echo There are a few final steps that require manual intervention
+echo "+ Hammerspoon"
+echo "  > Please download Hammerspoon from https://github.com/Hammerspoon/hammerspoon/releases/latest"
+echo "  > Then move the application to /Applications/"
+echo ""
+echo "Don't forget to install dotfiles and dotfiles_private!"
+
