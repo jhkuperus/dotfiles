@@ -26,6 +26,11 @@ function installAllDotFiles() {
   installFor "vimrc"
   installFor "gitignore"
   installFor "gitconfig"
+  # Remove original fish config folder
+  if [[ -d ~/.config/fish ]];
+  then
+    rm -rf ~/.config/fish
+  fi
   installFor "fish" "config"
   installFor "starship.toml" "config"
 
