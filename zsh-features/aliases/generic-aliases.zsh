@@ -4,6 +4,8 @@ alias lm='exa --long --colour=always --header --git | less'
 alias ll='exa -a --long --colour=always --header --git'
 alias l='exa --long --colour=always --header --git'
 
+alias du=dust
+
 alias e='$EDITOR'
 alias m='more'
 
