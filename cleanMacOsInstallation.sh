@@ -72,6 +72,9 @@ echo There are a few final steps that require manual intervention
 echo "+ Hammerspoon"
 echo "  > Please download Hammerspoon from https://github.com/Hammerspoon/hammerspoon/releases/latest"
 echo "  > Then move the application to /Applications/"
+echo "+ AirPlay Receiver"
+echo "  > Go to Preferences -> Sharing and turn AirPlay Receiver off"
+echo "  > Leaving it on will drastically reduce BT sound quality with multiple devices connected"
 echo ""
 echo "Don't forget to install dotfiles and dotfiles_private!"
 
