@@ -16,7 +16,7 @@ alias gaa='git add --all'
 alias gapa='git add --patch'
 alias gau='git add --update'
 
-alias gb='git branch'
+alias gb='git branch -vv'
 alias gba='git branch -a'
 alias gbd='git branch -d'
 alias gbda='git branch --no-color --merged | command grep -vE "^(\*|\s*(master|develop|dev)\s*\$)" | command xargs -n 1 git branch -d'
@@ -115,14 +115,14 @@ alias gmum='git merge upstream/master'
 alias gp='git push'
 alias gpd='git push --dry-run'
 alias gpoat='git push origin --all && git push origin --tags'
-alias gpruner="git fetch --prune && \(gb -vv | grep -e '\[origin/.*: gone\]' | awk '{print \$1}' | xargs git branch -d\) && git rebase --autostash"
-alias gprune="git fetch --prune && \(gb -vv | grep -e '\[origin/.*: gone\]' | awk '{print \$1}' | xargs git branch -d\)"
+#alias gpruner="git fetch --prune && git branch -vv | grep -e '\[origin/.*: gone\]' | awk '{print \$1}' | xargs git branch -d && git rebase --autostash"
+alias gprune="git fetch --prune && git branch -vv | grep -e '\[origin/.*: gone\]' | awk '{print \$1}' | xargs git branch -d"
 alias gpt='git push --tags'
 alias gpu='git push upstream'
 alias gpu='git pull'
 alias gpv='git push -v'
 
-alias gr='git remote'
+alias gr='git remote -v'
 alias gra='git remote add'
 alias grb='git rebase'
 alias grba='git rebase --abort'
