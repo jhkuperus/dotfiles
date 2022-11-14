@@ -4,7 +4,6 @@ let mapleader = " "
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-surround'
-Plug 'RRethy/vim-hexokinase'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 
