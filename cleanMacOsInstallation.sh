@@ -65,7 +65,8 @@ cp $PWD/cleanInstall/fonts/* /Library/Fonts
 # Installing SDKMAN!
 curl -s "https://get.sdkman.io" | bash
 
-
+# Details on ruby installations:
+# https://stackoverflow.com/questions/51126403/you-dont-have-write-permissions-for-the-library-ruby-gems-2-3-0-directory-ma
 
 # Final manual steps
 echo There are a few final steps that require manual intervention
@@ -75,6 +76,8 @@ echo "  > Then move the application to /Applications/"
 echo "+ AirPlay Receiver"
 echo "  > Go to Preferences -> Sharing and turn AirPlay Receiver off"
 echo "  > Leaving it on will drastically reduce BT sound quality with multiple devices connected"
+echo "+ Install Ruby"
+echo "  > You may have to run ruby-install <version> to install Ruby"
 echo ""
 echo "Don't forget to install dotfiles and dotfiles_private!"
 
