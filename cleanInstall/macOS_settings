@@ -125,7 +125,6 @@ defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int
 defaults write bluetoothaudiod "Apple Initial Bitpool" 64
 defaults write bluetoothaudiod "AAC Bitrate" 192
 defaults write bluetoothaudiod "Enable AAC codec" -bool true
-defaults write bluetoothaudiod "Enable AptX codec" -bool true
 
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
