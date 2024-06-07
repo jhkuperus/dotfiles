@@ -18,29 +18,16 @@ echo "Detected Operating System: $OS"
 function installAllDotFiles() {
   echo "Here goes..."
 #  installFor "personal.zsh-theme" "zsh-features"
-  installFor "aliases" "zsh-features"
-  installFor "git-functions.zsh" "zsh-features"
-  installFor "timewarrior-helpers.zsh" "zsh-features"
-  installFor "keybindings.zsh" "zsh-features"
+  installFor "zshenv"
+  installFor "zsh" "config"
+  installFor "p10k.zsh"
   scriptFor "vim"
   installFor "vimrc"
   installFor "gitignore"
   installFor "gitconfig"
-  # Remove original fish config folder
-  if [[ -d ~/.config/fish ]];
-  then
-    rm -rf ~/.config/fish
-  fi
-  installFor "fish" "config"
-  installFor "starship.toml" "config"
 
   if [[ $OS == "DARWIN" ]];
   then
-    installFor "iterm2-shell-integration.zsh" "zsh-features"
-    installFor "iterm2-custom-escape-codes.zsh" "zsh-features"
-
-    installFor "anybar-integration.zsh" "zsh-features"
-
     installFor "karabiner.json" "config/karabiner"
 
     installFor "app-management.lua" "hammerspoon"
