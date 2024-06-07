@@ -56,10 +56,10 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 ## Use fzf to pick completion
 zstyle ':completion:*' menu no
 ## Show previews while completing in fzf
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --icons --color=always $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa --icons --color=always $realpath'
 
 ## Show previews while completing with zoxide
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza --icons --color=always $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'exa --icons --color=always $realpath'
 
 # Autosuggestions
 ## Make suggestion more readable
