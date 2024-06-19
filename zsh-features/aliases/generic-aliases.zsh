@@ -25,3 +25,10 @@ export GIT_LOG_OPTIONS="--pretty=format:\"%h, - %an, $ar : %s\" --graph"
 alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"'
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.arg[1])"'
 
+# Navigation helps
+alias ..=cd ..
+alias ...=cd ../..
+alias ....=cd ../../..
+alias .....=cd ../../../..
+alias ......=cd ../../../../..
+alias .......=cd ../../../../../..
