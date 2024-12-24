@@ -17,9 +17,18 @@ echo "Detected Operating System: $OS"
 
 function installAllDotFiles() {
   echo "Here goes..."
-#  installFor "personal.zsh-theme" "zsh-features"
+  installFor "personal.zsh-theme" "zsh-features"
   installFor "zshenv"
   installFor "zsh" "config"
+
+  # Temporary "hack", need to make this fit the rest of the dotfiles-philosophy
+  if [[ -d ~/dotfiles_private/config/zsh/aliases ]]; then
+    for pa in ~/dotfiles_private/config/zsh/aliases/*; do
+      PAF=$(basename $pa)
+      ln -s ~/dotfiles_private/config/zsh/aliases/$PAF ~/.config/zsh/aliases/private_$PAF
+    done
+  fi
+
   installFor "p10k.zsh"
   scriptFor "vim"
   installFor "vimrc"

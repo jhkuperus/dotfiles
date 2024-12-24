@@ -1,20 +1,21 @@
 # Aliasses for different variations of ls
-alias ls='exa --long --colour=always --header --git'
-alias lm='exa --long --colour=always --header --git | less'
-alias ll='exa -a --long --colour=always --header --git'
-alias l='exa --long --colour=always --header --git'
+alias ls='eza --long --colour=always --header --git'
+alias lm='eza --long --colour=always --header --git | less'
+alias ll='eza -a --long --colour=always --header --git'
+alias l='eza --long --colour=always --header --git'
 
 alias du=dust
 
 alias e='$EDITOR'
 alias m='more'
 
-alias a='vi ~/.kramor_shell_profile'
-alias ag='vi ~/.kramor_git_aliases'
+alias a='vi ~/dotfiles/config/zsh/aliases/generic-aliases.zsh'
+alias ag='vi ~/dotfiles/config/zsh/aliases/git-aliases.zsh'
+alias ar='for af in ~/.config/zsh/aliases/*; do source $af; done'
 
 alias pwdc='pwd|pbcopy'
 
-alias httpd='python -m SimpleHTTPServer'
+alias httpd='python3 -m http.server'
 
 alias profile='vi ~/.bash_profile'
 alias c='cd'
@@ -31,3 +32,4 @@ alias -g ....=cd ../../..
 alias -g .....=cd ../../../..
 alias -g ......=cd ../../../../..
 alias -g .......=cd ../../../../../..
+
