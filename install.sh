@@ -17,7 +17,6 @@ echo "Detected Operating System: $OS"
 
 function installAllDotFiles() {
   echo "Here goes..."
-  installFor "personal.zsh-theme" "zsh-features"
   installFor "zshenv"
   installFor "zsh" "config"
 
