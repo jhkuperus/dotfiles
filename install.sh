@@ -19,6 +19,7 @@ function installAllDotFiles() {
   echo "Here goes..."
   installFor "zshenv"
   installFor "zsh" "config"
+  installFor "nvim" "config"
 
   # Temporary "hack", need to make this fit the rest of the dotfiles-philosophy
   if [[ -d ~/dotfiles_private/config/zsh/aliases ]]; then
