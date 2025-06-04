@@ -70,28 +70,27 @@ hyper.bindKey("r", hs.reload)
 
 local appSwitcherKeys = {
 	["m"] = "com.microsoft.Outlook",
+	["e"] = "com.microsoft.Excel",
+	["w"] = "com.microsoft.Word",
 	["o"] = "com.obsproject.obs-studio",
 	["]"] = "com.github.wez.wezterm",
 	["["] = "com.apple.ActivityMonitor",
 	[";"] = { ["normal"] = "org.mozilla.firefox", ["shift"] = "com.google.Chrome" },
 	["l"] = "com.jetbrains.intellij",
-	["k"] = "com.apple.keychainaccess",
+	["k"] = { ["normal"] = "com.apple.keychainaccess", ["shift"] = "com.apple.Passwords" },
 	["'"] = "com.apple.Notes",
 	["/"] = "com.apple.iCal",
 	["."] = "com.apple.finder",
 	[","] = "com.microsoft.onenote.mac",
 	["1"] = "net.whatsapp.WhatsApp",
 	["2"] = "com.tinyspeck.slackmacgap",
+	["3"] = "org.whispersystems.signal-desktop",
 	["="] = "com.binance.mac-client",
 	["\\"] = "com.tinyspeck.slackmacgap",
-	["`"] = function()
-		print(pcall(minimizeAllButFocussedWindow))
-	end,
+	["`"] = { ["shift"] = minimizeAllButFocussedWindow },
 	["p"] = {
 		["normal"] = "com.spotify.client",
-		["shift"] = function()
-			hs.spotify.displayCurrentTrack()
-		end,
+		["shift"] = hs.spotify.displayCurrentTrack,
 	},
 	-- Create new Terminal Window
 	["space"] = function()
@@ -99,6 +98,7 @@ local appSwitcherKeys = {
 	end,
 }
 
+-- Functions to setup the AppSwitcher
 local createActionFunctionForAppSwitcher = function(action)
 	if type(action) == "string" then
 		return function()
@@ -131,6 +131,8 @@ hyper.bindKey("b", function()
 end)
 
 -- Window Management
+hs.window.animationDuration = 0
+
 hyper.bindKey("up", function()
 	wm.windowMaximize(0)
 end)
