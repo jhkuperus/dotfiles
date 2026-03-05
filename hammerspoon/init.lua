@@ -52,6 +52,26 @@ local minimizeAllButFocussedWindow = function()
 	hs.alert.show("📽")
 end
 
+local unminimizeAllWindows = function()
+	local focusWindow = hs.window.focusedWindow()
+	local animationDuration = hs.window.animationDuration
+	hs.window.animationDuration = 0
+	local minimizedWindows = 0
+
+	for i, w in pairs(hs.window.minimizedWindows()) do
+		minimizedWindows = minimizedWindows + 1
+		w:unminimize()
+	end
+
+	hs.timer.delayed
+		.new(hs.window.animationDuration * minimizedWindows, function()
+			focusWindow:raise()
+			hs.alert.show("YARP")
+			hs.window.animationDuration = animationDuration
+		end)
+		:start()
+end
+
 local appLog = hs.logger.new("blarp", "info")
 
 -- Automatically start OBS' Virtual Camera when it launches
@@ -73,7 +93,7 @@ local appSwitcherKeys = {
 	["e"] = "com.microsoft.Excel",
 	["w"] = "com.microsoft.Word",
 	["o"] = "com.obsproject.obs-studio",
-	["]"] = "com.github.wez.wezterm",
+	["h"] = "com.github.wez.wezterm",
 	["["] = "com.apple.ActivityMonitor",
 	[";"] = { ["normal"] = "org.mozilla.firefox", ["shift"] = "com.google.Chrome" },
 	["l"] = "com.jetbrains.intellij",
@@ -82,12 +102,10 @@ local appSwitcherKeys = {
 	["/"] = "com.apple.iCal",
 	["."] = "com.apple.finder",
 	[","] = "com.microsoft.onenote.mac",
-	["1"] = "net.whatsapp.WhatsApp",
-	["2"] = "com.tinyspeck.slackmacgap",
-	["3"] = "org.whispersystems.signal-desktop",
-	["="] = "com.binance.mac-client",
-	["\\"] = "com.tinyspeck.slackmacgap",
-	["`"] = { ["shift"] = minimizeAllButFocussedWindow },
+	["q"] = "net.whatsapp.WhatsApp",
+	["w"] = "com.tinyspeck.slackmacgap",
+	["e"] = "org.whispersystems.signal-desktop",
+	["`"] = { ["shift"] = minimizeAllButFocussedWindow, ["command-shift"] = unminimizeAllWindows },
 	["p"] = {
 		["normal"] = "com.spotify.client",
 		["shift"] = hs.spotify.displayCurrentTrack,
@@ -119,6 +137,9 @@ for key, value in pairs(appSwitcherKeys) do
 		end
 		if value["normal"] ~= nil then
 			hyper.bindKey(key, createActionFunctionForAppSwitcher(value["normal"]))
+		end
+		if value["command-shift"] ~= nil then
+			hyper.bindCommandShiftKey(key, createActionFunctionForAppSwitcher(value["command-shift"]))
 		end
 	end
 end
@@ -227,7 +248,7 @@ local soundBoard = {
 	dropTheBass = { key = "'", file = "d-d-d-d-drop-the-bass.mp3" },
 	leroy = { key = "\\", file = "leroy.swf.mp3" },
 
-	elevator = { key = "`", file = "musique-dascenseur-mp3cut.mp3" },
+	--elevator = { key = "`", file = "musique-dascenseur-mp3cut.mp3" },
 	cupASoup = { key = "z", file = "cup-a-soup-reclame-sjors-ruben-van-der-meer-mp3cut.mp3" },
 	looneyTunes = { key = "x", file = "looney-tunes.mp3" },
 	christmas1 = { key = "c", file = "christmas_driving.m4a" },
