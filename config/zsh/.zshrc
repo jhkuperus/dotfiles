@@ -27,6 +27,15 @@ for af in "$h"/aliases/*; do
   fi
 done
 
+# Enhance kill autocompletion
+kill() {
+  if [ $# -eq 0 ]; then
+    ps -A | fzf --prompt="Select process to kill: " | awk '{print $1}' | xargs -r -I {} sh -c 'command kill {}'
+  else
+    command kill "$@"
+  fi
+}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export PATH="/opt/homebrew/opt/node@24/bin:$PATH"
