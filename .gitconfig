@@ -4,6 +4,7 @@
 [core]
 	excludesfile = /Users/kramor/.gitignore
   pager = delta
+	autocrlf = input
 
 [interactive]
   diffFilter = delta --color-only
