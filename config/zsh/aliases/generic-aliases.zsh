@@ -20,7 +20,14 @@ alias httpd='python3 -m http.server'
 alias profile='vi ~/.bash_profile'
 alias c='cd'
 
+# Aliasing npm to pnpm for safety!
+alias npm=pnpm
+
 export GIT_LOG_OPTIONS="--pretty=format:\"%h, - %an, $ar : %s\" --graph"
+
+# Set NeoVim as default vim editor
+alias vi='nvim'
+alias vim='nvim'
 
 # Cool Tools
 alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"'
@@ -33,3 +40,6 @@ alias -g .....=cd ../../../..
 alias -g ......=cd ../../../../..
 alias -g .......=cd ../../../../../..
 
+# Disk Usage analysis
+alias du1='du -d 1'
+alias dfh='df -h'
